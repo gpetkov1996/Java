@@ -8,6 +8,7 @@ public class ButtonPanel extends JPanel{
 
     private JButton addTask;
     private JButton clear;
+    private JButton percentage;
 
     Border emptyBorder = BorderFactory.createLineBorder(Color.black);
     //Constructor
@@ -19,6 +20,14 @@ public class ButtonPanel extends JPanel{
         addTask.setFont(new Font("Sans-serif", Font.PLAIN, 20));
 
         this.add(addTask);
+
+        this.add(Box.createHorizontalStrut(20));
+
+        percentage = new JButton("0%");
+        percentage.setBorder(BorderFactory.createEmptyBorder());
+        percentage.setFont(new Font("Sans-serif", Font.PLAIN, 20));
+
+        this.add(percentage);
 
         this.add(Box.createHorizontalStrut(20));
 
@@ -35,5 +44,9 @@ public class ButtonPanel extends JPanel{
 
     public JButton getClear() {
         return clear;
+    }
+
+    public JButton getPercentage() {
+        return percentage;
     }
 }

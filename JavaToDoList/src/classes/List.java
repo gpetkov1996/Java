@@ -5,6 +5,8 @@ import java.awt.*;
 
 public class List extends JPanel {
 
+
+
     public List() {
         GridLayout layout = new GridLayout(10, 1);
         layout.setVgap(5);
@@ -18,6 +20,7 @@ public class List extends JPanel {
         for(int i = 0; i < listItems.length; i++) {
             if(listItems[i] instanceof Task) {
                 ((Task)listItems[i]).changeIndex(i + 1);
+
             }
         }
     }
@@ -29,6 +32,7 @@ public class List extends JPanel {
             if(c instanceof Task) {
                 if (((Task) c).isChecked()) {
                     remove(c);
+
                 }
             }
         }
