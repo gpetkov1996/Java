@@ -6,7 +6,7 @@ import java.awt.*;
 public class Button extends JButton {
     private JLabel nameOfButton = new JLabel();
     public Button() {
-//        this.setPreferredSize(new Dimension(100,100));
+        this.setPreferredSize(new Dimension(250,100));
         this.setBackground(Color.BLACK);
         setNameOfButton("");
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -22,7 +22,7 @@ public class Button extends JButton {
 //        name.setOpaque(true);
 
         // Set the background color of the label
-        nameOfButton.setForeground(Color.WHITE);
+        nameOfButton.setForeground(Color.BLACK);
     }
 
     public void setNameOfButton(String name) {

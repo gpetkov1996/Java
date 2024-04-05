@@ -12,6 +12,7 @@ public class Container extends JFrame {
     private Button addButton = new Button();
     private Button refButton = new Button();
     private Task task = new Task();
+    private JPanel panel = new JPanel();
     public Container() {
 
         this.setSize(500,500);
@@ -21,8 +22,21 @@ public class Container extends JFrame {
         this.setLayout(new BorderLayout());
         this.add(title, BorderLayout.NORTH);
         this.add(list, BorderLayout.CENTER);
+        this.add(panel, BorderLayout.SOUTH);
+
+        this.panel.setPreferredSize(new Dimension(500,100));
+//        this.panel.setBackground(Color.WHITE);
+        this.panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+
+        // Set layout to BorderLayout and add label to the center
+        this.panel.setLayout(new BorderLayout());
+        this.panel.add(addButton, BorderLayout.WEST);
         addButton.setNameOfButton("Add");
-        this.add(addButton, BorderLayout.SOUTH);
+        addButton.setBackground(Color.BLACK);
+
+        this.panel.add(refButton, BorderLayout.EAST);
+        refButton.setNameOfButton("Refresh");
+        refButton.setBackground(Color.BLACK);
 
         addButton.addActionListener(new ActionListener() {
             @Override
