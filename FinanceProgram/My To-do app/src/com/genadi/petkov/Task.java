@@ -6,34 +6,31 @@ import java.awt.*;
 public class Task extends JPanel {
 
     private JTextField name = new JTextField("Add task here");
+    private JButton done = new JButton("Done");
+
+    public JButton getDone() {
+        return done;
+    }
 
     public Task() {
-        this.setPreferredSize(new Dimension(500,100));
+        this.setPreferredSize(new Dimension(500, 100));
         this.setBackground(Color.WHITE);
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-
-        // Set layout to BorderLayout and add label to the center
         this.setLayout(new BorderLayout());
-        this.add(name, BorderLayout.CENTER);
+        this.add(name, BorderLayout.EAST);
+        this.add(done, BorderLayout.WEST);
 
-        // Set label properties
-//        name.setHorizontalAlignment(SwingConstants.CENTER);
-//        name.setVerticalAlignment(SwingConstants.CENTER);
-        name.setHorizontalAlignment(SwingConstants.CENTER);
+        this.name.setPreferredSize(new Dimension(400,100));
+        this.name.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        this.name.setHorizontalAlignment(SwingConstants.CENTER);
 
-        // Make the label opaque
-//        name.setOpaque(true);
+        this.done.setPreferredSize(new Dimension(100,100));
+        this.done.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        this.done.setHorizontalAlignment(SwingConstants.CENTER);
+        this.done.setForeground(Color.GREEN);
 
-        // Set the background color of the label
-        name.setForeground(Color.BLACK);
+
     }
 
-    @Override
-    public String getName() {
-        return name.getText();
-    }
-
-    public void setName(String name) {
-        this.name.setText(name);
-    }
+    // Getter and setter methods for the name field can be added here if needed
 }
