@@ -2,14 +2,21 @@ package com.genadi.petkov;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Task extends JPanel {
 
+    private boolean hasValue = true;
     private JTextField name = new JTextField("Add task here");
     private JButton done = new JButton("Done");
 
     public JButton getDone() {
         return done;
+    }
+
+    public boolean isHasValue() {
+        return hasValue;
     }
 
     public Task() {
@@ -29,8 +36,18 @@ public class Task extends JPanel {
         this.done.setHorizontalAlignment(SwingConstants.CENTER);
         this.done.setForeground(Color.GREEN);
 
+        done.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                name.setForeground(Color.GREEN);
+                hasValue = false;
+                revalidate();
+                repaint();
+            }
+        });
 
     }
+
 
     // Getter and setter methods for the name field can be added here if needed
 }

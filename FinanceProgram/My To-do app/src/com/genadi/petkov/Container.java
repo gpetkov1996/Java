@@ -46,5 +46,20 @@ public class Container extends JFrame {
                 list.repaint();
             }
         });
+
+        refButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Component[] components = list.getComponents();
+                for(Component c : components) {
+                    if (c instanceof Task && ((Task) c).isHasValue() == false) {
+                        list.remove(c);
+                    }
+                }
+                list.revalidate();
+                list.repaint();
+            }
+        });
+
     }
 }
