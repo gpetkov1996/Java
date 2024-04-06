@@ -13,16 +13,18 @@ public class Container extends JFrame {
     private Button refButton = new Button();
     private Task task = new Task();
     private JPanel panel = new JPanel();
+    private JPanel panelForFrame = new JPanel();
     public Container() {
-
+        panelForFrame.setPreferredSize(new Dimension(500, 500));
+        this.getContentPane().add(panelForFrame);
         this.setSize(500,500);
-        this.getContentPane().setBackground(Color.GRAY);
+        this.panelForFrame.setBackground(Color.GRAY);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setLayout(new BorderLayout());
-        this.add(title, BorderLayout.NORTH);
-        this.add(list, BorderLayout.CENTER);
-        this.add(panel, BorderLayout.SOUTH);
+        this.panelForFrame.setLayout(new BorderLayout());
+        this.panelForFrame.add(title, BorderLayout.NORTH);
+        this.panelForFrame.add(list, BorderLayout.CENTER);
+        this.panelForFrame.add(panel, BorderLayout.SOUTH);
 
         this.panel.setPreferredSize(new Dimension(500,100));
 //        this.panel.setBackground(Color.WHITE);
