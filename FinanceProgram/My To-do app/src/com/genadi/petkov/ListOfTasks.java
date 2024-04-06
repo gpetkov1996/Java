@@ -2,15 +2,11 @@ package com.genadi.petkov;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class ListOfTasks extends JPanel {
     private Task task = new Task();
     private JPanel panel = new JPanel();
-    private List<JPanel> listOfTasks = new ArrayList<>();
 
     public ListOfTasks() {
         this.panel.setPreferredSize(new Dimension(500,100));

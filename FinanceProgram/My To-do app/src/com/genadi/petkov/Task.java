@@ -11,10 +11,6 @@ public class Task extends JPanel {
     private JTextField name = new JTextField("Add task here");
     private JButton done = new JButton("Done");
 
-    public JButton getDone() {
-        return done;
-    }
-
     public boolean isHasValue() {
         return hasValue;
     }

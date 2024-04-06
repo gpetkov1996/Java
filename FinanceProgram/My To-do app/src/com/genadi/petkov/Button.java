@@ -18,10 +18,6 @@ public class Button extends JButton {
         nameOfButton.setVerticalAlignment(SwingConstants.CENTER);
         nameOfButton.setBorder(BorderFactory.createLineBorder(Color.WHITE));
 
-        // Make the label opaque
-//        name.setOpaque(true);
-
-        // Set the background color of the label
         nameOfButton.setForeground(Color.BLACK);
     }
 

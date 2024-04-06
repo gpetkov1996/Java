@@ -1,7 +1,6 @@
 package com.genadi.petkov;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,27 +10,36 @@ public class Container extends JFrame {
     private ListOfTasks list = new ListOfTasks();
     private Button addButton = new Button();
     private Button refButton = new Button();
-    private Task task = new Task();
     private JPanel panel = new JPanel();
     private JPanel panelForFrame = new JPanel();
+    private JPanel middlePanel = new JPanel();
+
     public Container() {
-        panelForFrame.setPreferredSize(new Dimension(500, 500));
+        panelForFrame.setPreferredSize(new Dimension(700, 700));
         this.getContentPane().add(panelForFrame);
-        this.setSize(500,500);
+        this.setSize(700,700);
         this.panelForFrame.setBackground(Color.GRAY);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.panelForFrame.setLayout(new BorderLayout());
         this.panelForFrame.add(title, BorderLayout.NORTH);
-        this.panelForFrame.add(list, BorderLayout.CENTER);
+        this.panelForFrame.add(middlePanel, BorderLayout.CENTER);
         this.panelForFrame.add(panel, BorderLayout.SOUTH);
 
-        this.panel.setPreferredSize(new Dimension(500,100));
-//        this.panel.setBackground(Color.WHITE);
-        this.panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        this.middlePanel.setPreferredSize(new Dimension(500,300));
+        this.middlePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        this.middlePanel.setLayout(new BorderLayout());
+        this.middlePanel.add(list, BorderLayout.CENTER);
 
-        // Set layout to BorderLayout and add label to the center
+//        JScrollPane scrollPane = new JScrollPane(list);
+//        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+//        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+//        this.middlePanel.add(scrollPane, BorderLayout.CENTER);
+
+        this.panel.setPreferredSize(new Dimension(500,100));
+        this.panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         this.panel.setLayout(new BorderLayout());
+
         this.panel.add(addButton, BorderLayout.WEST);
         addButton.setNameOfButton("Add");
         addButton.setBackground(Color.BLACK);
