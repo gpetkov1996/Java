@@ -1,30 +1,26 @@
-import java.util.Scanner;
+void main() {
+    // Get string input
+    IO.print("Enter a string: ");
+    Scanner sc = new Scanner(System.in);
+    String userInput = sc.nextLine();
 
-public class Main {
-    public static void main(String[] args){
-        // Get string input
-        System.out.print("Enter a string: ");
-        Scanner sc = new Scanner(System.in);
-        String userInput = sc.nextLine();
+    // Get reversed string
+    String output = reverseString(userInput);
 
-        // Get reversed string
-        String output = reverseString(userInput);
+    // Print reversed string
+    IO.println("Reversed string: " + output);
 
-        // Print reversed string
-        System.out.println("Reversed string: " + output);
+    sc.close();
+}
 
-        sc.close();
+private static String reverseString(String input) {
+    char[] inputToArray = input.toCharArray();
+    char[] reversedString = new char[input.length()];
+
+    int i = 0;
+    for (int j = input.length() - 1; j >= 0; j--) {
+        reversedString[i++] = inputToArray[j];
     }
 
-    private static String reverseString(String input) {
-        char[] inputToArray = input.toCharArray();
-        char[] reversedString = new char[input.length()];
-
-        int i = 0;
-        for (int j = input.length() - 1; j >= 0; j--) {
-            reversedString[i++] = inputToArray[j];
-        }
-
-        return new String(reversedString);
-    }
+    return new String(reversedString);
 }
